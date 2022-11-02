@@ -1,0 +1,13 @@
+function getEachItem(object) {
+  object.forEach(item => {
+    searchItem(item)
+  })
+};
+
+function searchItem(item) {
+  Object.keys(item).forEach(key => {
+    if (typeof item[key] === "object") {
+      searchItem(item[key])
+    }
+  })
+}
